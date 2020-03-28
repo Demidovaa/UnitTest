@@ -54,6 +54,34 @@ class Test(unittest.TestCase):
                     }
         self.assertDictEqual(result, expected)
 
+    def test_get_char_frequencies_uniform_char(self):
+        text = u'uniform'
+        result = textstatistics.get_char_frequencies(text)
+        expected = {char: 1 for char in text}
+        self.assertDictEqual(result, expected)
+
+    def test_get_char_frequencies_simple_text_test(self):
+        text = u'This is not a bug this is a feature'
+        result = textstatistics.get_char_frequencies(text)
+        expected = {
+                    u'T': 1,
+                    u'h': 2,
+                    u' ': 8,
+                    u'i': 4,
+                    u's': 4,
+                    u'n': 1,
+                    u'o': 1,
+                    u't': 3,
+                    u'a': 3,
+                    u'b': 1,
+                    u'u': 2,
+                    u'g': 1,
+                    u'f': 1,
+                    u'e': 2,
+                    u'r': 1,
+                    }
+        self.assertDictEqual(result, expected)
+
 
 if __name__ == "__main__":
     unittest.main()
