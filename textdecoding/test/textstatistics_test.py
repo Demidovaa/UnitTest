@@ -84,6 +84,30 @@ class Test(unittest.TestCase):
         }
         self.assertDictEqual(result, expected)
 
+    # Test for function функции get_unique_words
+
+    def test_get_unique_words(self):
+        text = u'This text is a sample text'
+        result = textstatistics.get_unique_words(text)
+        expected = {'This', 'text', 'is', 'a', 'sample'}
+        self.assertEqual(result, expected)
+
+    @unittest.expectedFailure
+    def test_get_unique_words_fail(self):
+        text = u'This text is a sample text'
+        result = textstatistics.get_unique_words(text)
+        expected = {'This', 'text'}
+        self.assertEqual(result, expected)
+
+    test_text = 'Test'  # test variable
+
+    @unittest.skipIf(test_text != [], "Сheck")
+    def test_get_unique_words_skip(self):
+        text = u'This text is a sample text'
+        result = textstatistics.get_unique_words(text)
+        expected = {'This', 'text', 'is', 'a', 'sample'}
+        self.assertEqual(result, expected)
+
 
 if __name__ == "__main__":
     unittest.main()
