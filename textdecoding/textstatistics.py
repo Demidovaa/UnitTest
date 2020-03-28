@@ -4,9 +4,10 @@ Module for text statistics calculation.
 '''
 
 import sys
+from collections import Counter
 
 def get_char_frequencies(text):
-    result = {}
+    result = Counter(text)
     return result
 
 def main():
