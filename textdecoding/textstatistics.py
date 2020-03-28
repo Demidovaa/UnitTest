@@ -15,8 +15,14 @@ def get_char_frequencies(text):
 
     return result
 
+def get_unique_words(text):
+    result = set(text.split())
+
+    return result
+
 def main():
     print(get_char_frequencies(u"abc"))
+    print(get_unique_words(u"Test"))
     return 0
 
 if __name__ == '__main__':
